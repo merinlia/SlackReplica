@@ -11,7 +11,10 @@ import { MessageService } from './services/message.service'
 import { CreateMessageService } from './services/create-message.service'
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
-
+import {LogInService } from './services/log-in.service'
+import { from } from 'rxjs/observable/from';
+import { WelcomeUserComponent } from './components/welcome-user/welcome-user.component';
+import {HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,13 +23,15 @@ import { LoginComponent } from './components/login/login.component';
     ActiveUsersComponent,
     PostToActiveChatComponent,
     PostComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeUserComponent
   ],
   imports: [
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [MessageService,CreateMessageService],
+  providers: [MessageService,CreateMessageService,LogInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

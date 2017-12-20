@@ -6,6 +6,7 @@ import { ActiveUser } from '../data/data';
 @Injectable()
 export class LogInService {
 
+  userArray:User[] = new Array<User>();
   constructor() { }
 
   checkForUserName(userName: String): boolean{
@@ -41,5 +42,4 @@ export class LogInService {
       if(user === ActiveUser[i])ActiveUser.splice(i, 1);
     }
   }
-
 }
